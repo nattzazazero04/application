@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/screen/exam.dart';
 import 'package:hello_world/screen/example_screen.dart';
 import 'package:hello_world/screen/form_screen.dart';
 import 'package:hello_world/screen/list_view_screen.dart';
@@ -52,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 },
-                child: Text("This is form screen"),
+                child: Text("FormScreen"),
               ),
                ElevatedButton(
                 onPressed: () {
@@ -63,17 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 },
-                child: Text("ExampleScreen"),
-              ),ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Exam(),
-                    ),
-                  );
-                },
-                child: Text("Exam"),
+                child: Text("Example"),
               ),
             ],
           ),

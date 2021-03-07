@@ -12,76 +12,85 @@ class _ExampleScreenState extends State<ExampleScreen> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        drawer: Drawer(
-          child: Text("Hello Drawer"),
-        ),
         appBar: AppBar(
           title: Text("ExampleScreen"),
         ),
-        body: 
-        Center(
-          child: Wrap(
-            children: <Widget>[
+        body: Container(
+          height: 250,
+          child: Column(
+            children: [
               Container(
-                margin: EdgeInsets.all(8),
-                height: 140,
-                width: 170,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("NoMoney"),
+                    PopupMenuButton(
+                      itemBuilder: (BuildContext context) {
+                        return [
+                          PopupMenuItem(
+                            child: Text("Wifi"),
+                          ),
+                          PopupMenuItem(
+                            child: Text("Bluetooth"),
+                          )
+                        ];
+                      },
+                    ),
+                  ],
                 ),
-                alignment: Alignment.center,
-                child: Text('Numberone'),
               ),
               Container(
-                margin: EdgeInsets.all(8),
-                height: 140,
-                width: 170,
-                decoration: BoxDecoration(
-                  color: Colors.yellow,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 150,
+                    color: Colors.pink,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Bubi",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Icon(
+                          Icons.pivot_table_chart,
+                          color: Colors.yellow,
+                          size: 50,
+                        )
+                      ],
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                alignment: Alignment.center,
-                child: Text('Numbertwo'),
-              ),
-              Container(
-                margin: EdgeInsets.all(8),
-                height: 140,
-                width: 170,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
+                  Container(
+                    width: 150,
+                    height: 150,
+                    color: Colors.blue,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Bubi",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Icon(
+                          Icons.pivot_table_chart,
+                          color: Colors.yellow,
+                          size: 50,
+                        )
+                      ],
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                alignment: Alignment.center,
-                child: Text('Numberthree'),
-              ),
-              Container(
-                margin: EdgeInsets.all(8),
-                height: 140,
-                width: 170,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                alignment: Alignment.center,
-                child: Text('Numberfour'),
-              ),
+                ],
+              ))
             ],
           ),
         ),
