@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/screen/exam.dart';
+import 'package:hello_world/screen/example_screen.dart';
+import 'package:hello_world/screen/form_screen.dart';
+import 'package:hello_world/screen/list_view_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -21,19 +25,60 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Center(
           child: Column(
             children: [
-              Container(
-                color: Colors.red,
-                child: Text("aaaaaaaaaaaaaaaaa")),
+              Container(color: Colors.red, child: Text("aaaaaaaaaaaaaaaaa")),
               Container(
                 width: 150,
                 height: 150,
                 color: Color(0xFF00ff00),
                 child: Image.asset('assets/images/cat.jpg'),
-        ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListViewScreen(),
+                    ),
+                  );
+                },
+                child: Text("กดปุ่มนี้ดู"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FormScreen(),
+                    ),
+                  );
+                },
+                child: Text("This is form screen"),
+              ),
+               ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExampleScreen(),
+                    ),
+                  );
+                },
+                child: Text("ExampleScreen"),
+              ),ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Exam(),
+                    ),
+                  );
+                },
+                child: Text("Exam"),
+              ),
             ],
           ),
+        ),
       ),
-    ),
     );
   }
 }
